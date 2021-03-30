@@ -8,6 +8,12 @@ class asset_types(models.Model):
     
     def __str__(self):
         return self.table_name
+
+
+    @property
+    def asset_count(self):
+        count = self.display.all().count()
+        return count
     
     
     

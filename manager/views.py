@@ -52,7 +52,8 @@ def add_items(request):
     if form.is_valid():
             form.save()
             messages.success(request, 'Successfully Saved')
-            return render(request,'list_items.html')
+            #return render(request,'list_items.html')
+            return redirect('list_items')
     context = {
             "form": form,
             "title": "Add Item",
@@ -295,7 +296,11 @@ def add_user_assets(request):
 #unassigned list
 @login_required(login_url='/login')
 def unassigned_assets(request):
-    queryset = asset_name.objects.filter(asset_type_id=None)
+    assigned_asset_ids = user_assets.objects.values_list('asset_id', flat=True)
+    if assigned_asset_ids:
+        queryset = asset_name.objects.exclude(id__in=list(assigned_asset_ids))
+    else:
+        queryset = asset_name.objects.all()
     context = {
         'queryset':queryset
     }

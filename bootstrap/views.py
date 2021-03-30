@@ -76,3 +76,8 @@ def userpage(request):
         "queryset":queryset,
     }
     return render(request, 'user.html', context)
+
+
+def logout(request):
+    auth.logout(request)
+    return render(request, 'login.html')

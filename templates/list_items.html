@@ -238,7 +238,7 @@
                                               <td><a href="{% url 'table_items' asset_type_id_id=instance.id %}">View</a></td>
                                               <td>{{instance.table_name}}</td>
                                               <td>{{instance.asset_tag}}</td>
-                                              <td>{{instance.status}}</td>
+                                              <td>{{instance.asset_count}}</td>
                                               <td><a href="{% url 'update_items' instance.id %}">Update</a></td>
                                               <td><a href="{% url 'delete_items' instance.id %}"><img src="{% static 'img/del.png'%}"></a></td>
                                             </tr>
@@ -290,7 +290,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="/login">Logout</a>
+                    <a class="btn btn-primary" href="/logout">Logout</a>
                 </div>
             </div>
         </div>
