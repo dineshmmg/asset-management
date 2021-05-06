@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Emp Mang</title>
+  <link href="./assets/css/wizard.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.7.1/css/bootstrap-datepicker3.css" rel="stylesheet" id="bootstrap-css">
+    <script>
+      function CopyAddress(form)
+      {
+      form.p_line_1.value = form.line_1.value;
+      form.p_line_2.value = form.line_2.value;
+      form.p_area.value = form.area.value;
+      form.p_city_town.value = form.city_town.value;
+      form.p_district.value = form.district.value;
+      form.p_state.value = form.state.value;
+      form.p_pin_code.value = form.pin_code.value;
+      }
+      </script>
+</head>
+  <body> 
+    <form id="regForm" action="">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+          Employee Information Management
+        </div>
+        
+        <!-- One "tab" for each step in the form: -->
+        <div class="tab">
+          <div class="card-body">
+            <div class="card-header bg-primary text-white">
+              <i class="fa fa-envelope mr-2"></i>
+              Personal Details
+            </div>
+            <form action="" method="POST">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-4">
+                    <label for="first_name">First Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="first_name"
+                      required
+                    />
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="middle_name">Middle Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="middle_name"
+                    />
+                  </div>
+                  <div class="col-sm-4">
+                    <label for="last_name">Last Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="last_name"
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="former_name">Former Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="former_name"
+                    />
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="father_name">Father Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="father_name"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="graduated">Gender</label>
+                    <select
+                      name="gender"
+                      id="gender"
+                      class="form-control"
+                      required
+                    >
+                      <option value="">--Select Option--</option>
+                      <option value="yes">Male</option>
+                      <option value="no">Female</option>
+                      <option value="no">Others</option>
+                    </select>
+                    <label for="email">Email</label>
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        class="form-control"
+                        placeholder="you@awesome.com"
+                        aria-describedby="emailHelp"
+                        required
+                      />
+                      <label for="emergency_contact_name">Emergency Contact Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        value=""
+                        id="emergency_contact_name"
+                        required
+                      />
+                    <label for="emergency_contact_no">Emgergence Contact No</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      value=""
+                      id="emergency_contact_no"
+                    />
+                    <label for="marital_status">Marital Status</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="marital_status"
+                      required
+                    />
+                    <label for="pan_number">PAN Number</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="pan_number"
+                    />
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="date_of_birth">Date Of Birth</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="dd/mm/yyyy"
+                      value=""
+                      id="date_of_birth"
+                    />
+                    <label for="mobile_number">Mobile Number</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      value=""
+                      id="mobile_number"
+                      required
+                    />
+                    <label for="Residence_number">Residence Number</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      value=""
+                      id="Residence_number"
+                    />
+                    <label for="blood_group">Blood Group</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="blood_group"
+                      required
+                    />
+                    <label for="nationality">Nationality</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="nationality"
+                      required
+                    />
+                    <label for="passport_number">Passport Number</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="passport_number"
+                      required
+                    />
+                  </div> 
+                </div>
+              </div>
+              <!--<div class="form-group">
+                <button class="btn btn-primary btn-block">Save</button>
+              </div>-->
+            </form>
+          </div>
+        </div>
+        
+        
+        <div class="tab">
+          <div class="card-body">
+            <div class="card-header bg-primary text-white">
+              <i class="fa fa-envelope mr-2"></i>
+              Address Details
+            </div>
+            <form action="" method="POST">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <h5> Current Address</h5>
+                    <label for="line_1">Line 1</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="line_1"
+                      required
+                    />
+                    <label for="line_2">Line 2</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="line_2"
+                    />
+                    <label for="area">Area</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="area"
+                    />
+                    <label for="city_town">City/Town</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="city_town"
+                      required
+                    />
+                    <label for="district">District</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="district"
+                      required
+                    />
+                    <label for="state">State</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="state"
+                      required
+                    />
+                    <label for="pin_code">PIN Code</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      value=""
+                      id="pin_code"
+                      required
+                    />
+                  </div>
+                  <div class="col-sm-6">
+                    <h5>Permanent Address</h5>
+                    <label for="p_line_1">Line 1</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="p_line_1"
+                      required
+                    />
+                    <label for="p_line_2">Line 2</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="p_line_2"
+                    />
+                    <label for="p_area">Area</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="p_area"
+                    />
+                    <label for="p_city_town">City/Town</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="p_city_town"
+                      required
+                    />
+                    <label for="p_district">District</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="p_district"
+                      required
+                    />
+                    <label for="p_state">State</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="p_state"
+                      required
+                    />
+                    <label for="p_pin_code">PIN Code</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      value=""
+                      id="p_pin_code"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-4"></div>
+                  <div class="col-sm-4">
+                    <input type="button" class="btn btn-primary btn-block" value="CopyAddress" onclick="CopyAddress(this.form);"> 
+                  </div>
+                  <!--<div class="col-sm-6">
+                    <button class="btn btn-primary btn-block">Save</button>
+                  </div>-->
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <div class="tab">
+          <div class="card-body">
+            <div class="card-header bg-primary text-white">
+              <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+              Education(Graduation)<br>
+              Please give details of the Highest qualification completed
+            </div>
+            <form action="" method="POST">
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="college_name">College Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="college_name"
+                      required
+                    />
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <label for="from">From</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder="dd/mm/yyyy"
+                          value=""
+                          id="from"
+                          required
+                        />
+                      </div>
+                      <div class="col-sm-6">
+                        <label for="to">To</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder="dd/mm/yyyy"
+                          value=""
+                          id="to"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="graduated">Graduated</label>
+                      <select
+                        name="graduated"
+                        id="graduated"
+                        class="form-control"
+                        required
+                      >
+                        <option value="">--Select Option--</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                      <label for="program">Program</label>
+                      <select
+                        name="program"
+                        id="program"
+                        class="form-control"
+                        required
+                      >
+                        <option value="">--Select Option--</option>
+                        <option value="full_time">Full Time</option>
+                        <option value="part_time">Part Time</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="university_name">University Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="university_name"
+                      required
+                    />
+                    <label for="subject_major">Subject(Major)</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="subject_major"
+                      required
+                    />
+                    <label for="graduation_date">Graduation Date</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      placeholder="mm/yyyy"
+                      value=""
+                      id="graduation_date"
+                      required
+                    />
+                    <label for="percentage_class">Percentage/class</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="percentage_class"
+                      required
+                    />
+                  </div>
+                </div>
+                <br>
+                <div class="card-header bg-primary text-white">
+                  <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                  Education(Post Graduation)<br>
+                  Please give details of the Highest qualification completed
+                </div>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <label for="post_college_name">College Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="post_college_name"
+                      required
+                    />
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <label for="post_from">From</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder="dd/mm/yyyy"
+                          value=""
+                          id="post_from"
+                          required
+                        />
+                      </div>
+                      <div class="col-sm-6">
+                        <label for="post_to">To</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder="dd/mm/yyyy"
+                          value=""
+                          id="post_to"
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="post_graduated">Graduated</label>
+                      <select
+                        name="post_graduated"
+                        id="post_graduated"
+                        class="form-control"
+                        required
+                      >
+                        <option value="">--Select Option--</option>
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                      </select>
+                      <label for="post_program">Program</label>
+                      <select
+                        name="post_program"
+                        id="post_program"
+                        class="form-control"
+                        required
+                      >
+                        <option value="">--Select Option--</option>
+                        <option value="full_time">Full Time</option>
+                        <option value="part_time">Part Time</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="post_university_name">University Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="post_university_name"
+                      required
+                    />
+                    <label for="post_subject_major">Subject(Major)</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="post_subject_major"
+                      required
+                    />
+                    <label for="post_graduation_date">Graduation Date</label>
+                    <input
+                      type="number"
+                      class="form-control"
+                      placeholder="mm/yyyy"
+                      value=""
+                      id="post_graduation_date"
+                      required
+                    />
+                    <label for="post_percentage_class">Percentage/class</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="post_percentage_class"
+                      required
+                    />
+                  </div>
+                </div>
+              </div>
+              <!--<div class="form-group">
+                <button class="btn btn-primary btn-block">Save</button>
+              </div>-->
+            </form>
+          </div>
+        </div>
+        
+        <div class="tab">
+          <div class="card-body">
+            <div class="card-header bg-primary text-white">
+              <i class="fa fa-briefcase mr-2"></i>
+              Employment History<br>
+              Previous Employment(1)
+            </div>
+            <form action="" method="POST">
+              <div class="form-group">
+                <label for="company_name">Company Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  value=""
+                  id="company_name"
+                />
+                <label for="address">Address</label>
+                <textarea
+                  name="address"
+                  type="text"
+                  class="form-control"
+                  value=""
+                  rows="2"
+                  id="address"
+                ></textarea>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <label for="office1_from">From</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder="dd/mm/yyyy"
+                          value=""
+                          id="office1_from"
+                        />
+                      </div>
+                      <div class="col-sm-6">
+                        <label for="office1_to">To</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder="dd/mm/yyyy"
+                          value=""
+                          id="office1_to"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="nature_of_employment">Nature of Employment</label>
+                      <select
+                        name="nature_of_employment"
+                        id="nature_of_employment"
+                        class="form-control"
+                      >
+                        <option value="">--Select Option--</option>
+                        <option value="yes">Permanent</option>
+                        <option value="no">Temporary</option>
+                      </select><br>
+                      <label for="salary_details">Salary Details(CTC or Gross)</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        value=""
+                        id="salary_details"
+                        />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="designation_&_department">Designation & Department</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="Designation_&_department"
+                    />
+                    <label for="employee_code">Employee Code/Personnel No.</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="employee_code"
+                    />
+                    <label for="agency_details">Agency Details along with contact numbers(if temporary or contractual)</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="agency_details"
+                    />
+                  </div>
+                </div>
+                <label for="reason">Reason(s) for Leaving</label>
+                <textarea
+                  name="reason"
+                  type="text"
+                  class="form-control"
+                  value=""
+                  rows="3"
+                  id="reason"
+                ></textarea>
+              </div>
+            </form>
+            <div class="card-header bg-primary text-white">
+              <i class="fa fa-briefcase mr-2"></i>
+              Employment History<br>
+              Previous Employment(2)
+            </div>
+            <form action="" method="POST">
+              <div class="form-group">
+                <label for="company_name_2">Company Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  value=""
+                  id="company_name_2"
+                />
+                <label for="address_2">Address</label>
+                <textarea
+                  name="address_2"
+                  type="text"
+                  class="form-control"
+                  value=""
+                  rows="2"
+                  id="address_2"
+                ></textarea>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <label for="office2_from">From</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder="dd/mm/yyyy"
+                          value=""
+                          id="office2_from"
+                        />
+                      </div>
+                      <div class="col-sm-6">
+                        <label for="office2_to">To</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder="dd/mm/yyyy"
+                          value=""
+                          id="office2_to"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="nature_of_employment_2">Nature of Employment</label>
+                      <select
+                        name="nature_of_employment_2"
+                        id="nature_of_employment_2"
+                        class="form-control"
+                      >
+                        <option value="">--Select Option--</option>
+                        <option value="yes">Permanent</option>
+                        <option value="no">Temporary</option>
+                      </select><br>
+                      <label for="salary_details_2">Salary Details(CTC or Gross)</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        value=""
+                        id="salary_details_2"
+                        />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="designation_&_department_2">Designation & Department</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="Designation_&_department_2"
+                    />
+                    <label for="employee_code_2">Employee Code/Personnel No.</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="employee_code_2"
+                    />
+                    <label for="agency_details_2">Agency Details along with contact numbers(if temporary or contractual)</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="agency_details_2"
+                    />
+                  </div>
+                </div>
+                <label for="reason_2">Reason(s) for Leaving</label>
+                <textarea
+                  name="reason_2"
+                  type="text"
+                  class="form-control"
+                  value=""
+                  rows="3"
+                  id="reason_2"
+                ></textarea>
+              </div>
+            </form>
+            <div class="card-header bg-primary text-white">
+              <i class="fa fa-briefcase mr-2"></i>
+              Employment History<br>
+              Previous Employment(3)
+            </div>
+            <form action="" method="POST">
+              <div class="form-group">
+                <label for="company_name_3">Company Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  value=""
+                  id="company_name_3"
+                />
+                <label for="address_3">Address</label>
+                <textarea
+                  name="address_3"
+                  type="text"
+                  class="form-control"
+                  value=""
+                  rows="2"
+                  id="address_3"
+                ></textarea>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <label for="office3_from">From</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder="dd/mm/yyyy"
+                          value=""
+                          id="office3_from"
+                        />
+                      </div>
+                      <div class="col-sm-6">
+                        <label for="office3_to">To</label>
+                        <input
+                          type="number"
+                          class="form-control"
+                          placeholder="dd/mm/yyyy"
+                          value=""
+                          id="office3_to"
+                        />
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="nature_of_employment_3">Nature of Employment</label>
+                      <select
+                        name="nature_of_employment_3"
+                        id="nature_of_employment_3"
+                        class="form-control"
+                      >
+                        <option value="">--Select Option--</option>
+                        <option value="yes">Permanent</option>
+                        <option value="no">Temporary</option>
+                      </select><br>
+                      <label for="salary_details_3">Salary Details(CTC or Gross)</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        value=""
+                        id="salary_details_3"
+                        />
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="designation_&_department_3">Designation & Department</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="Designation_&_department_3"
+                    />
+                    <label for="employee_code_3">Employee Code/Personnel No.</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="employee_code_3"
+                    />
+                    <label for="agency_details_3">Agency Details along with contact numbers(if temporary or contractual)</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      value=""
+                      id="agency_details_3"
+                    />
+                  </div>
+                </div>
+                <label for="reason_3">Reason(s) for Leaving</label>
+                <textarea
+                  name="reason_3"
+                  type="text"
+                  class="form-control"
+                  value=""
+                  rows="3"
+                  id="reason_3"
+                ></textarea>
+              </div>
+              <!--<div class="form-group">
+                <button class="btn btn-primary btn-block">Save</button>
+              </div>-->
+            </form>
+          </div>
+        </div>
+
+        <div class="tab">
+          <div class="card-body">
+            <div class="card-header bg-primary text-white">
+              Declaration and Authoruation by Applicant
+            </div>
+            <form action="" method="POST">
+              <div class="form-group">
+                <div class="row">
+                  <div class="container">
+                    <br>
+                    <p class="font-italic">I consent to take any pre or post-employment examinations as may be required by CDA Technologies or its representative, 
+                      and release CDA Technologies from any liability that may arise from such examination.<br><br>
+
+                      I authorize an inquiry to be made on the information contained on this application.
+                      Former employers and officials of universities and colleges named on this application are authorized to give 
+                      information about me and I release them from all liability for issuing such information.<br><br>
+
+                      I hereby attest and warrant that all my answers on this application as well as on all forms completed in conjunction with
+                      my employment are true and accurate. I understand that my misrepresentation of facts, 
+                      failure to disclose information required on this application or material change in my information provided which is
+                      not reported to Human Resources shall be cause for dismissal regardless of when discovered by CDA Technologies.
+                    </p>
+                  </div>
+                </div>
+                <!--<div class="form-group">
+                  <button class="btn btn-primary btn-block">Save</button>
+                </div>-->
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <div style="overflow:auto;">
+          <div class="form-group">
+            <div class="row">
+              <div class="col-sm-3"></div>
+              <div class="col-sm-3">
+                <button type="button" id="prevBtn" class="btn btn-primary btn-block" onclick="nextPrev(-1)">Previous</button>
+              </div>
+              <div class="col-sm-3">
+                <button type="button" id="nextBtn" class="btn btn-primary btn-block" onclick="nextPrev(1)">Next</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      
+        
+        <!-- Circles which indicates the steps of the form: -->
+        <div style="text-align:center;margin-top:40px;">
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+          <span class="step"></span>
+        </div>
+      </div>
+      
+    </form>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script>src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"</script>
+    <script>src="https://cdn.datatables.net/1.10.24/css/dataTables.bootstrap.min.css"</script>
+
+    <script src="./assets/js/wizard.js"></script>
+    
+  </body>
+</html>
