@@ -17,17 +17,20 @@ def emails(request):
     if request.method == 'POST':
         e = pd.read_excel(request.FILES.get('email'))
         emails = e['email'].values
+        length = len(emails)
         usernames = e['username'].values
         subject = request.POST.get('subject')
         content = request.POST.get('body')
         times = request.POST.get('time')
-        print(times)
-        time.sleep(60*int(times))
+        count = 1
         for indx, email in enumerate(emails):
             username = usernames[indx]
             msg = EmailMultiAlternatives(subject, "<h4>Hi, "+username+"</h4><br>"+content, EMAIL_HOST_USER, [email])
             msg.content_subtype = "html"
             msg.send()
+            print(count,"/",length)
+            time.sleep(int(times))
+            count += 1
         messages.success(request, 'Your mail has been sent successfuly!!!')
         return redirect('/')
     return render(request, "test.html", {'form':form})
