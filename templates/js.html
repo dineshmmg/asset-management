@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+    function SendEmail()
+    {
+        document.getElementById("op").innerHTML="message send";
+    }
+
+    function Send()
+    {
+        var time = window.prompt("Enter Time");
+        window.setTimeout(SendEmail,1000*time);
+    }
+    
+    </script>
+</head>
+<body>
+    <button onclick="Send()">start</button>
+    <p id="op"></p>
+    
+</body>
+</html>
